@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+
+@import '~tailwindcss/preflight';
+@import '~tailwindcss/components';
+@import '~tailwindcss/utilities';
+
+html, body, #app {
+  @apply bg-black text-grey-lighter;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
+}
