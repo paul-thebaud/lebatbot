@@ -24,11 +24,11 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="/css/app.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <noscript>You must enable Javascript to run this app.</noscript>
 <div id="app"></div>
-<script type="application/javascript" src="{{ asset('js/app.js') }}"></script>
+<script type="application/javascript" src="/js/app.js"></script>
 </body>
 </html>
