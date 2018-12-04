@@ -19,3 +19,7 @@ body {
   font-family: 'Oswald', sans-serif;
   font-size: 1.5em;
 }
+
+a {
+  @apply text-yellow no-underline;
+}
