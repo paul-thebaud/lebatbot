@@ -7,7 +7,7 @@
                     <input id="search" type="text"
                            placeholder="Rechercher un mot déjà tweeté ..."
                            class="rounded py-2 px-3 w-full bg-black text-grey-lighter border border-grey-dark leading-tight appearance-none"
-                           v-model="word" @input="onInput">
+                           @input="onInput">
                 </form>
                 <small v-if="state === 'none' || (state === 'success' && tweets.length === 0)">
                     Aucun résultat trouvé.
@@ -47,15 +47,16 @@
             };
         },
         mounted() {
-            this.search(this.word || null);
+            this.search();
         },
         methods: {
-            onInput() {
+            onInput(event) {
+                this.word  = event.target.value;
                 this.state = 'loading';
-                this.search(this.word || null);
+                this.search();
             },
-            search: debounce(function (word) {
-                axios.get('/api/tweets', { params: { word } })
+            search: debounce(function () {
+                axios.get('/api/tweets', { params: { word: this.word || null } })
                     .then(response => {
                         this.tweets = response.data;
                     })
