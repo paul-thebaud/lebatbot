@@ -26,7 +26,7 @@ class TweetController extends AbstractController
         $query = Tweet::query()->limit(25)->orderByDesc('updated_at');
         if ($request->has('word')) {
             $query->whereHas('tweeted_word', function (Builder $query) use ($request) {
-                $query->where('word', 'like', sprintf('%%%s%%', $request->input('word')));
+                $query->where('word', 'like', sprintf('%%%s%%', strtolower($request->input('word'))));
             });
         }
 
