@@ -26,6 +26,7 @@ class ChangeDatabaseStructure extends Migration
         });
 
         Schema::table('tweets', function (Blueprint $table) {
+            $table->dropForeign('tweets_tweeted_word_id_foreign');
             $table->removeColumn('tweeted_word_id');
         });
 
