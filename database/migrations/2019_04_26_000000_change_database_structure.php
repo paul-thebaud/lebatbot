@@ -23,6 +23,7 @@ class ChangeDatabaseStructure extends Migration
             $tweet->word = DB::table('tweeted_words')
                 ->where('id', $tweet->tweeted_word_id)
                 ->value('word');
+            $tweet->save();
         });
 
         Schema::table('tweets', function (Blueprint $table) {
