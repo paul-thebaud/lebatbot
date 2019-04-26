@@ -7,14 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Tweet extends Model
 {
-    protected $fillable = ['twitter_id', 'tweeted_word_id'];
-
-    protected $with = ['tweeted_word'];
-
-    public function tweeted_word(): BelongsTo
-    {
-        return $this->belongsTo(TweetedWord::class);
-    }
+    protected $fillable = ['twitter_id', 'word'];
 
     public function toArray()
     {
